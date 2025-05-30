@@ -1,6 +1,6 @@
 import mysql from 'mysql2/promise'
 import {DB_NAME} from "../constants.js"
-
+import app  from '../app.js'
 
 
 const pool = mysql.createPool({
@@ -12,7 +12,7 @@ const pool = mysql.createPool({
 })
 
 // Get a connection from the pool
-const getConnectionDB = async () =>{
+export const getConnectionDB = async () =>{
     try {
         const connection = await pool.getConnection()
         console.log(`\n ${DB_NAME} Database connected !!`);
@@ -24,9 +24,8 @@ const getConnectionDB = async () =>{
 }
 
 // Release connection back 
-const releaseConnectionDB = (connection) => {
+export const releaseConnectionDB = (connection) => {
     connection.release();
 };
 
-export {getConnectionDB, releaseConnectionDB};
 
