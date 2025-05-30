@@ -2,14 +2,19 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import ownerRoutes from './routes/ownerRoutes.js';
+import petTypeRoutes from './routes/petTypeRoutes.js'
+import petRoutes from './routes/petRoutes.js'
 
 const app = express();
 
 app.use(express.json());
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: true }));
 
+
+//ROUTES
 app.use('/', ownerRoutes);
+app.use('/', petTypeRoutes);
+app.use('/', petRoutes)
 
 const PORT = process.env.PORT || 7000;
 app.listen(PORT, () => {
