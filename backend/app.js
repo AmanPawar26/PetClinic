@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import ownerRoutes from './routes/ownerRoutes.js';
 import petTypeRoutes from './routes/petTypeRoutes.js'
 import petRoutes from './routes/petRoutes.js'
+import visitRoutes from './routes/visitRoutes.js'
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(cors());
 app.use('/', ownerRoutes);
 app.use('/', petTypeRoutes);
 app.use('/', petRoutes)
+app.use('/', visitRoutes);
 
 const PORT = process.env.PORT || 7000;
 app.listen(PORT, () => {
