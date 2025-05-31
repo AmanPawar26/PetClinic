@@ -37,21 +37,3 @@ export const updatePet = async (req, res) => {
 
 
 
-
-// //UPDATE owner
-// export const updateOwner = async (req, res) => {
-//     const {owner_id} = req.params;
-//     const {first_name, last_name, address, city, telephone} = req.body;
-
-//     try {
-//         const result = await Owners.update(owner_id, {first_name, last_name, address, city, telephone});
-
-//          if (result.affectedRows === 0) {
-//       return res.status(404).json({ message: "Owner not found" });
-//     }
-
-//     res.status(200).json({ message: "Owner updated successfully" });
-//     } catch (error) {
-//         console.error("Error updating owner:", err.message);
-//     res.status(500).json({ message: "Failed to update owner" });
-//     }
