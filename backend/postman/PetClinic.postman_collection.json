@@ -1,0 +1,686 @@
+{
+	"info": {
+		"_postman_id": "c22d1ddb-7f24-4c2c-b8ed-38a08e03375c",
+		"name": "PetClinic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36238709"
+	},
+	"item": [
+		{
+			"name": "Owners",
+			"item": [
+				{
+					"name": "Get_AllOwners",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/owners",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"owners"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_OwnerByLastName",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/owners/find?last_name=jones",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"owners",
+								"find"
+							],
+							"query": [
+								{
+									"key": "last_name",
+									"value": "jones"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_OwnerById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/owners/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"owners",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create_NewOwner",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"first_name\": \"Mark\",\r\n  \"last_name\": \"Davis\",\r\n  \"address\": \"123 East St\",\r\n  \"city\": \"Townsville\",\r\n  \"telephone\": \"1234567890\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/owners",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"owners"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update_Owner",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n  \"first_name\": \"William\",\r\n  \"last_name\": \"Smith\",\r\n  \"address\": \"456 West Street\",\r\n  \"city\": \"Springfield\",\r\n  \"telephone\": \"98765438990\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/owners/22",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"owners",
+								"22"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PetType",
+			"item": [
+				{
+					"name": "Create_PetType",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Dog\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/pet-types",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"pet-types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_PetType",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/pet-types",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"pet-types"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pets",
+			"item": [
+				{
+					"name": "New_Pet_Under_Owner",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Bruno\",\r\n  \"birth_date\": \"2022-05-01\",\r\n  \"type_id\": 5\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/owners/2/pets",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"owners",
+								"2",
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update_Pet_Specific_Owner",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Buddy\",\r\n  \"birth_date\": \"2021-06-15\",\r\n  \"type_id\": 2\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/owners/1/pets/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"owners",
+								"1",
+								"pets",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Visit",
+			"item": [
+				{
+					"name": "New_Visit",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"visit_date\": \"2024-05-29\",\r\n  \"description\": \"Annual checkup\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/owners/6/pets/7/visit",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"owners",
+								"6",
+								"pets",
+								"7",
+								"visit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vets",
+			"item": [
+				{
+					"name": "Get_Vetereninarians_Speciality",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/vets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"vets"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "0wners_Curl",
+			"item": [
+				{
+					"name": "Get_AllOwners",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/owners",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"owners"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_OwnerByLastName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/owners/find?last_name=jones",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"owners",
+								"find"
+							],
+							"query": [
+								{
+									"key": "last_name",
+									"value": "jones"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_OwnerById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/owners/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"owners",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create_NewOwner",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"first_name\": \"Mark\",\n  \"last_name\": \"Davis\",\n  \"address\": \"123 East St\",\n  \"city\": \"Townsville\",\n  \"telephone\": \"1234567890\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/owners",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"owners"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update_Owner",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \n  \"first_name\": \"William\",\n  \"last_name\": \"Smith\",\n  \"address\": \"456 West Street\",\n  \"city\": \"Springfield\",\n  \"telephone\": \"98765438990\"\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/owners/22",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"owners",
+								"22"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PetType_Curl",
+			"item": [
+				{
+					"name": "Get_PetType",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/pet-types",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"pet-types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create_PetType",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Dog\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/pet-types",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"pet-types"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pets_Curl",
+			"item": [
+				{
+					"name": "New_Pet_Under_Owner",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Brownie\",\n  \"birth_date\": \"2023-02-01\",\n  \"type_id\": 3\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/owners/2/pets",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"owners",
+								"2",
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update_Pet_Specific_Owner",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Buddy\",\n  \"birth_date\": \"2021-06-15\",\n  \"type_id\": 2\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/owners/1/pets/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"owners",
+								"1",
+								"pets",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Visit_Curl",
+			"item": [
+				{
+					"name": "New_Visit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"visit_date\": \"2024-05-29\",\n  \"description\": \"Annual checkup second time\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/owners/6/pets/7/visit",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"owners",
+								"6",
+								"pets",
+								"7",
+								"visit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vets_Curl",
+			"item": [
+				{
+					"name": "Get_Vetereninarians_Speciality",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/vets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"vets"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
