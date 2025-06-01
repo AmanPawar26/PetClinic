@@ -1,6 +1,6 @@
 import mysql from 'mysql2/promise'
 import {DB_NAME} from "../constants.js"
-import app  from '../app.js'
+import app from "../app.js"
 
 
 const pool = mysql.createPool({
