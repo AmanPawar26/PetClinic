@@ -9,12 +9,13 @@ import vetRoutes from './routes/vetRoutes.js';
 import swaggerSpec from './swagger.js';
 import swaggerUi from 'swagger-ui-express';
 
-
 const app = express();
 
 app.use(express.json());
 app.use(cors());
 
+// Swagger route
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 
 //ROUTES
@@ -23,11 +24,6 @@ app.use('/', petTypeRoutes);
 app.use('/', petRoutes);
 app.use('/', visitRoutes);
 app.use('/', vetRoutes);
-
-
-// Swagger route
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-
 
 
 const PORT = process.env.PORT || 7000;
