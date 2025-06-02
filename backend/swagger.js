@@ -2,7 +2,7 @@ import swaggerJSDoc from 'swagger-jsdoc';
 
 const options = {
   definition: {
-    openapi: '3.0.0', // ✅ Use 3.0.0 for better compatibility
+    openapi: '3.1.0', // ✅ Use 3.0.0 for better compatibility
     info: {
       title: 'PetClinic API',
       version: '1.0.0',
